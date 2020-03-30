@@ -1,7 +1,7 @@
 #!/bin/bash
 
 printf "\
-set title \"Krefeld.de\"
+set title filename1
 #set terminal pdf linewidth 1 size 16cm,14cm
 set terminal png
 set label \"Corona Situation\" at screen 0.478, 0.9 font \"Arial,9\"
@@ -25,10 +25,10 @@ printf "\
 set yrange[0:]
 set xrange['2020-03-03':]
 
-plot filename1 using 1:3 with lines lw 2 title 'Test positiv', \
-     filename1 using 1:5 with lines lw 2 title 'stationär', \
-     filename1 using 1:6 with lines lw 2 title 'intensiv', \
-     filename1 using 1:7 with lines lw 2 title 'tot' \
+plot filename1 using 1:(\$3 == 0 ? NaN : \$3) with lines  lw 2  title 'Test positiv', \
+     filename1 using 1:(\$5 == 0 ? NaN : \$5) with lines  lw 2  title 'stationär', \
+     filename1 using 1:(\$6 == 0 ? NaN : \$6) with lines  lw 2  title 'intensiv', \
+     filename1 using 1:(\$7 == 0 ? NaN : \$7) with points pt 11 title 'tot' \
 " >> /tmp/$0.plot
 
-gnuplot -persist -e "outputFile='./$1.png';filename1='$1.txt'" /tmp/$0.plot
+gnuplot -persist -e "outputFile='./$1_2.png';filename1='$1.txt'" /tmp/$0.plot
