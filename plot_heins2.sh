@@ -5,7 +5,7 @@ set title \"Kreis-Heinsberg.de\"
 set label \"Corona Situation\" at screen 0.478, 0.9 font \"Arial,9\"
 set terminal png
 set output \"./kreis-heinsberg.png\"
-set logscale y 2
+#set logscale y 2
 set xlabel \"Tag\"
 set ylabel \"Anzahl\"
 set boxwidth 0.2
@@ -20,7 +20,7 @@ echo "set format x \"%d.%m.\"" >> /tmp/$0.plot
 
 printf "\
 
-set yrange[1:]
+set yrange[0:]
 set xrange['2020-02-20':]
 
 plot 'kreis-heinsberg.de.txt' using 1:(\$2 == 0 ? NaN : \$2) with lines  lw 2  title 'Test positiv', \

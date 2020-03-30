@@ -6,12 +6,13 @@ Beispiel [Kreis-Heinsberg.de PDF](https://github.com/no-go/coronaKrefeldGnuplot/
 
 ## Beispiel mit Daten
 
+log Darstellung
+
 ![Bild mit gnuplot log2](krefeld.de.png)
 
-log Darstellung
+lineare Darstellung
 
 ![Bild mit gnuplot lineare](krefeld.de_2.png)
 
 ![Bild mit gnuplot linear Kreis-Heinsberg](kreis-heinsberg.png)
 
-lineare Darstellung
