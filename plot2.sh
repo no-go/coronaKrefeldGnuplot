@@ -4,8 +4,7 @@ printf "\
 set title filename1
 #set terminal pdf linewidth 1 size 16cm,14cm
 set terminal png
-set label \"Corona Situation\" at screen 0.478, 0.9 font \"Arial,9\"
-#set label \"Corona Situation\" at screen 0.485, 0.94 font \"Arial,9\"
+set label \"Corona Situation\" at screen 0.47, 0.932 font \"Arial,9\"
 set output outputFile
 #set logscale y 2
 set xlabel \"Tag\"
