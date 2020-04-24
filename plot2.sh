@@ -24,7 +24,7 @@ printf "\
 set yrange[0:]
 set xrange['2020-03-03':]
 
-plot filename1 using 1:(\$3 == 0 ? NaN : \$3) with lines  lw 2  title 'Test positiv', \
+plot filename1 using 1:(\$3 == 0 ? NaN : \$3 -\$4 -\$7) with lines  lw 2  title 'zur Zeit krank', \
      filename1 using 1:(\$4 == 0 ? NaN : \$4) with points pt 9  title 'geheilt', \
      filename1 using 1:(\$5 == 0 ? NaN : \$5) with lines  lw 2  title 'stationär', \
      filename1 using 1:(\$6 == 0 ? NaN : \$6) with lines  lw 2  title 'intensiv', \
